@@ -1,0 +1,155 @@
+{
+  "slug": "darkside",
+  "name": "Dark Side Car's",
+  "timezone": "Europe/Moscow",
+  "accent_color": "#4690FF",
+  "description": "Студия детейлинга в Волгограде и Волжском. Тонировка без разбора дверей, бронирование кузова антигравийной плёнкой, полировка, керамика и химчистка.",
+  "contacts": {
+    "phone": "+79375583348",
+    "whatsapp": "+79880283348",
+    "telegram": "https://t.me/+79880283348",
+    "address": "Волгоград, Череповецкая улица, 104",
+    "map_url": "https://yandex.ru/maps/org/dark_side_car_s/49184231456/"
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Пост 1"
+    },
+    {
+      "key": "box-2",
+      "name": "Пост 2"
+    },
+    {
+      "key": "box-tint",
+      "name": "Пост тонировки"
+    }
+  ],
+  "services": [
+    {
+      "key": "tinting",
+      "name": "Тонировка стёкол (обновлено)",
+      "description": "Тонируем без разбора дверей. Плёнку подбираем по светопропусканию — до работы показываем варианты на стекле.",
+      "duration_minutes": 180,
+      "buffer_before_minutes": 15,
+      "buffer_after_minutes": 15,
+      "price_kopecks": null,
+      "resource_keys": [
+        "box-tint",
+        "box-1"
+      ]
+    },
+    {
+      "key": "paint-protection",
+      "name": "Бронирование кузова плёнкой",
+      "description": "Антигравийная плёнка полностью или по зонам риска. Есть несколько пакетов оклейки.",
+      "duration_minutes": 2880,
+      "buffer_before_minutes": 30,
+      "buffer_after_minutes": 60,
+      "price_kopecks": null,
+      "resource_keys": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "polishing",
+      "name": "Полировка кузова",
+      "description": "Восстановительная полировка лакокрасочного покрытия. Полировка стёкол и фар отдельно.",
+      "duration_minutes": 480,
+      "buffer_before_minutes": 30,
+      "buffer_after_minutes": 30,
+      "price_kopecks": null,
+      "resource_keys": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "ceramic",
+      "name": "Керамическое покрытие",
+      "description": "Защита лака и глубина цвета. Требует выдержки, поэтому машина остаётся в студии.",
+      "duration_minutes": 1440,
+      "buffer_before_minutes": 30,
+      "buffer_after_minutes": 60,
+      "price_kopecks": null,
+      "resource_keys": [
+        "box-1",
+        "box-2"
+      ]
+    },
+    {
+      "key": "interior-cleaning",
+      "name": "Химчистка салона",
+      "description": "Чистка сидений, обивки и пластика. Машину возвращаем без разводов и следов воды.",
+      "duration_minutes": 360,
+      "buffer_before_minutes": 15,
+      "buffer_after_minutes": 30,
+      "price_kopecks": null,
+      "resource_keys": [
+        "box-1",
+        "box-2"
+      ]
+    }
+  ],
+  "working_hours": [
+    {
+      "weekday": 1,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 2,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 3,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 4,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 5,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 6,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 7,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    }
+  ],
+  "schedule_exceptions": [],
+  "info_cards": [
+    {
+      "title": "Тонировка без разбора",
+      "body": "Не снимаем дверные карты. Перед работой показываем варианты плёнки прямо на стекле.",
+      "icon": "car"
+    },
+    {
+      "title": "Два адреса",
+      "body": "Волгоград, Череповецкая 104 и Волжский, улица имени Карла Маркса 50.",
+      "icon": "map-pin"
+    },
+    {
+      "title": "Зона ожидания",
+      "body": "Wi-Fi, кофе, парковка. Можно подождать или оставить машину и вернуться к готовности.",
+      "icon": "coffee"
+    }
+  ],
+  "media": {
+    "hero": null,
+    "logo": null
+  },
+  "gallery": []
+}

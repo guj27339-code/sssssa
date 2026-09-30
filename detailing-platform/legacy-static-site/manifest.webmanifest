@@ -1,0 +1,42 @@
+{
+  "id": "/dark-side-cars/",
+  "name": "Dark Side Car's — детейлинг",
+  "short_name": "Dark Side",
+  "description": "Тонировка, бронирование кузова плёнкой, полировка, керамика и химчистка. Волгоград и Волжский.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#0E1012",
+  "theme_color": "#0E1012",
+  "lang": "ru",
+  "dir": "ltr",
+  "categories": ["business", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Записаться",
+      "short_name": "Запись",
+      "url": "./index.html#book",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Портфолио работ",
+      "short_name": "Работы",
+      "url": "./portfolio.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Контакты и маршрут",
+      "short_name": "Контакты",
+      "url": "./index.html#contacts",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

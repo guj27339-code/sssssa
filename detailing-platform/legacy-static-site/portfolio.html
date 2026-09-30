@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Портфолио работ — Dark Side Car's, детейлинг в Волгограде и Волжском</title>
+<meta name="description" content="Галерея работ студии детейлинга Dark Side Car's: тонировка, бронирование кузова плёнкой, полировка, керамика, химчистка салона, антихром.">
+<meta name="theme-color" content="#0E1012">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Портфолио работ — Dark Side Car's">
+<meta property="og:description" content="Галерея работ студии детейлинга: тонировка, плёнка, полировка, керамика, химчистка.">
+<meta property="og:image" content="icons/icon-512.png">
+
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon.ico" sizes="32x32">
+<link rel="icon" href="icons/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Dark Side">
+<meta name="mobile-web-app-capable" content="yes">
+
+<style>
+:root{
+  --bg:#0E1012;--coal:#15181B;--card:#1A1D21;--line:#262A2F;
+  --amber:#F5A623;--amber-soft:#FFD68C;--text:#F2F3F5;--muted:#8A9199;
+  --radius:18px;--gut:20px;--maxw:1180px;--bar:64px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+h1{margin:0;font-size:clamp(1.9rem,6vw,3.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.lead{color:var(--muted);max-width:56ch;font-size:clamp(.98rem,2vw,1.12rem)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.75rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--amber);opacity:.6}
+
+header{position:sticky;top:0;z-index:60;background:rgba(14,16,18,.86);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:14px;height:66px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:800;letter-spacing:-.02em;font-size:1.02rem}
+.logo .mark{width:30px;height:30px;border-radius:50%;flex:none;
+  background:radial-gradient(circle at 72% 30%,var(--amber-soft) 0%,var(--amber) 26%,#3a2a0d 58%,#191b1e 78%);
+  box-shadow:0 0 18px -4px rgba(245,166,35,.55)}
+.back{margin-left:auto;display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-size:.9rem;color:var(--muted);padding:9px 15px;border-radius:999px;border:1px solid var(--line);
+  transition:border-color .2s,color .2s}
+.back:hover{color:var(--text);border-color:#3A4149}
+
+.intro{padding-top:54px;padding-bottom:32px}
+
+/* фильтры */
+.filters{display:flex;gap:9px;overflow-x:auto;padding:0 var(--gut) 4px;margin:0 calc(var(--gut) * -1) 26px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.filters button{
+  flex:none;appearance:none;background:rgba(255,255,255,.02);border:1px solid var(--line);
+  padding:11px 18px;border-radius:999px;cursor:pointer;font-size:.9rem;font-weight:620;color:var(--muted);
+  transition:border-color .2s,background .2s,color .2s;white-space:nowrap;
+}
+.filters button:hover{color:var(--text);border-color:#3A4149}
+.filters button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:#14110A}
+
+/* сетка */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,255px),1fr));gap:14px;padding-bottom:70px}
+.item{
+  position:relative;border:0;padding:0;margin:0;background:var(--coal);cursor:zoom-in;
+  border-radius:14px;overflow:hidden;aspect-ratio:4/3;display:block;width:100%;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1),box-shadow .3s,opacity .35s;
+  border:1px solid var(--line);
+}
+.item:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(0,0,0,.9);border-color:#39404A}
+.item svg{width:100%;height:100%;display:block}
+.item .meta{
+  position:absolute;left:0;right:0;bottom:0;padding:26px 13px 11px;text-align:left;
+  background:linear-gradient(transparent,rgba(9,10,11,.92));
+}
+.item .meta b{display:block;font-size:.88rem;font-weight:700}
+.item .meta span{font-size:.78rem;color:var(--muted)}
+.item.hide{display:none}
+.js .item{opacity:0;transform:translateY(20px);transition:opacity .55s,transform .55s}
+.js .item.in{opacity:1;transform:none}
+
+.empty{color:var(--muted);padding:40px 0;display:none}
+.empty.show{display:block}
+
+/* просмотр */
+.viewer{position:fixed;inset:0;z-index:100;background:rgba(6,7,8,.94);
+  backdrop-filter:blur(8px);display:none;place-items:center;padding:20px}
+.viewer.show{display:grid}
+.viewer figure{margin:0;max-width:1000px;width:100%}
+.viewer .frame{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--coal)}
+.viewer figcaption{margin-top:14px;text-align:center;font-size:.9rem;color:var(--muted)}
+.viewer figcaption b{display:block;color:var(--text);font-size:1rem;margin-bottom:2px}
+.vbtn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;
+  background:rgba(26,29,33,.9);border:1px solid var(--line);cursor:pointer;display:grid;place-items:center;
+  transition:border-color .2s,background .2s}
+.vbtn:hover{border-color:var(--amber)}
+.vbtn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.vprev{left:14px}.vnext{right:14px}
+.vclose{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;
+  background:rgba(26,29,33,.9);border:1px solid var(--line);cursor:pointer;font-size:1.5rem;line-height:1;
+  display:grid;place-items:center}
+
+footer{border-top:1px solid var(--line);padding:34px 0 calc(34px + var(--bar));color:var(--muted);font-size:.85rem}
+footer a{text-decoration:none;display:inline-block;padding:6px 0}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:70;display:grid;grid-template-columns:repeat(3,1fr);
+  background:rgba(21,24,27,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.dock a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  height:var(--bar);text-decoration:none;font-size:.7rem;font-weight:650;color:var(--muted)}
+.dock a svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.dock a.accent{color:var(--amber)}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .js .item{opacity:1;transform:none}
+}
+@media (min-width:860px){
+  :root{--gut:32px}
+  .dock{display:none}
+  footer{padding-bottom:34px}
+  .intro{padding-top:72px;padding-bottom:40px}
+}
+@media (max-width:859px){body{padding-bottom:var(--bar)}}
+@media (max-width:400px){:root{--gut:16px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hbar">
+    <a class="logo" href="index.html"><span class="mark" aria-hidden="true"></span>Dark Side Car&rsquo;s</a>
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      На главную
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap intro">
+    <span class="eyebrow">Портфолио</span>
+    <h1>Работы студии</h1>
+    <p class="lead" style="margin-top:18px">
+      Выберите категорию, чтобы посмотреть конкретное направление. Нажмите на снимок — откроется крупно.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Фильтр по категориям">
+      <button type="button" data-f="all" aria-pressed="true">Все работы</button>
+      <button type="button" data-f="film" aria-pressed="false">Бронирование плёнкой</button>
+      <button type="button" data-f="tint" aria-pressed="false">Тонировка</button>
+      <button type="button" data-f="polish" aria-pressed="false">Полировка</button>
+      <button type="button" data-f="ceramic" aria-pressed="false">Керамика</button>
+      <button type="button" data-f="clean" aria-pressed="false">Химчистка</button>
+      <button type="button" data-f="chrome" aria-pressed="false">Антихром</button>
+    </div>
+
+    <div class="gal" id="gal"></div>
+    <p class="empty" id="empty">В этой категории пока нет снимков.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p style="margin:0 0 8px">Dark Side Car&rsquo;s — студия детейлинга.</p>
+    <p style="margin:0"><a href="tel:+79375583348">+7 (937) 558-33-48</a> — Волгоград, Череповецкая улица, 104</p>
+    <p style="margin:4px 0 0"><a href="tel:+79880283348">+7 (988) 028-33-48</a> — Волжский, улица имени Карла Маркса, 50</p>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Быстрые действия">
+  <a href="tel:+79375583348"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Позвонить</a>
+  <a class="accent" href="https://wa.me/79880283348" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20.5l1.8-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a href="https://yandex.ru/maps/org/dark_side_car_s/49184231456/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Маршрут</a>
+</nav>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+  <button class="vclose" id="v-close" type="button" aria-label="Закрыть">&times;</button>
+  <button class="vbtn vprev" id="v-prev" type="button" aria-label="Предыдущая"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="vbtn vnext" id="v-next" type="button" aria-label="Следующая"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+  <figure>
+    <div class="frame" id="v-frame"></div>
+    <figcaption id="v-cap"></figcaption>
+  </figure>
+</div>
+
+<noscript>
+  <div class="wrap" style="padding-bottom:60px">
+    <p style="color:#8A9199">Фильтры и просмотр крупным планом работают с включённым JavaScript.
+    Позвонить можно по номеру <a href="tel:+79375583348" style="color:#F5A623">+7 (937) 558-33-48</a>.</p>
+  </div>
+</noscript>
+
+<script>
+(function(){
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  /*
+    Слоты под реальные фотографии студии.
+    Каждый объект — одна карточка: категория, подпись и рисунок-заглушка.
+    Заменить на снимки: <img src="works/имя.jpg" alt="описание" loading="lazy">
+  */
+  var CATS = {
+    film:"Бронирование плёнкой", tint:"Тонировка", polish:"Полировка",
+    ceramic:"Керамика", clean:"Химчистка", chrome:"Антихром"
+  };
+
+  var ITEMS = [
+    {c:"film",    t:"Оклейка капота и бампера",        s:"Защита зон риска"},
+    {c:"film",    t:"Полное бронирование кузова",      s:"Антигравийная плёнка"},
+    {c:"film",    t:"Защита зеркал и стоек",           s:"Зоны риска"},
+    {c:"film",    t:"Оклейка порогов",                 s:"Антигравийная плёнка"},
+    {c:"tint",    t:"Тонировка в круг",                s:"Без разбора дверей"},
+    {c:"tint",    t:"Атермальная плёнка на лобовое",   s:"Подбор светопропускания"},
+    {c:"tint",    t:"Затемнение задней полусферы",     s:"Без разбора дверей"},
+    {c:"polish",  t:"Восстановительная полировка",     s:"Кузов"},
+    {c:"polish",  t:"Полировка фар",                   s:"Оптика"},
+    {c:"polish",  t:"Полировка стёкол",                s:"Стекло"},
+    {c:"ceramic", t:"Керамическое покрытие кузова",    s:"Защита лака"},
+    {c:"ceramic", t:"Керамика на диски",               s:"Защита от реагентов"},
+    {c:"clean",   t:"Химчистка салона целиком",        s:"Ткань и пластик"},
+    {c:"clean",   t:"Чистка сидений",                  s:"Обивка"},
+    {c:"clean",   t:"Чистка потолка и карт дверей",    s:"Обивка"},
+    {c:"chrome",  t:"Затемнение хрома",                s:"Оконные молдинги"},
+    {c:"chrome",  t:"Оклейка решётки радиатора",       s:"Цветная плёнка"},
+    {c:"chrome",  t:"Смена цвета крыши",               s:"Цветная плёнка"}
+  ];
+
+  /* набор фоновых рисунков-заглушек */
+  function art(cat, i){
+    var tone = ["#14171A","#171A1E","#191C20","#1B1F23"][i % 4];
+    var acc  = ["#242930","#2a2f36","#20242a","#2d333b"][i % 4];
+    var shapes = {
+      film:'<path d="M60 195h280l-24-50c-6-11-16-17-27-17H111c-11 0-21 6-27 17z" fill="'+acc+'"/>'+
+           '<path d="M92 170h216l-14-28H106z" fill="#F5A623" opacity=".18"/>'+
+           '<circle cx="118" cy="205" r="21" fill="#0e1012"/><circle cx="282" cy="205" r="21" fill="#0e1012"/>',
+      tint:'<rect x="66" y="74" width="268" height="152" rx="16" fill="'+acc+'"/>'+
+           '<rect x="88" y="96" width="224" height="108" rx="9" fill="#0b0d0f"/>'+
+           '<path d="M88 150h224v54a9 9 0 0 1-9 9H97a9 9 0 0 1-9-9z" fill="#F5A623" opacity=".07"/>',
+      polish:'<circle cx="200" cy="150" r="86" fill="'+acc+'"/>'+
+           '<circle cx="228" cy="118" r="30" fill="#F5A623" opacity=".2"/>'+
+           '<circle cx="243" cy="106" r="11" fill="#FFD68C" opacity=".35"/>',
+      ceramic:'<ellipse cx="200" cy="158" rx="130" ry="64" fill="'+acc+'"/>'+
+           '<ellipse cx="164" cy="130" rx="46" ry="21" fill="#F5A623" opacity=".18"/>'+
+           '<ellipse cx="256" cy="176" rx="34" ry="14" fill="#FFD68C" opacity=".08"/>',
+      clean:'<path d="M96 214v-84a36 36 0 0 1 36-36h136a36 36 0 0 1 36 36v84z" fill="'+acc+'"/>'+
+           '<rect x="128" y="126" width="144" height="60" rx="12" fill="#0e1012"/>'+
+           '<path d="M128 156h144v18a12 12 0 0 1-12 12H140a12 12 0 0 1-12-12z" fill="#F5A623" opacity=".1"/>',
+      chrome:'<rect x="62" y="132" width="276" height="22" rx="11" fill="'+acc+'"/>'+
+           '<rect x="62" y="170" width="190" height="16" rx="8" fill="'+acc+'"/>'+
+           '<rect x="62" y="132" width="276" height="22" rx="11" fill="#F5A623" opacity=".12"/>'
+    };
+    return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Место для фотографии">'+
+           '<rect width="400" height="300" fill="'+tone+'"/>'+ (shapes[cat]||"") +'</svg>';
+  }
+
+  var gal = document.getElementById("gal");
+  var empty = document.getElementById("empty");
+
+  ITEMS.forEach(function(it, i){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "item";
+    b.dataset.cat = it.c;
+    b.dataset.idx = i;
+    b.setAttribute("aria-label", it.t + " — открыть крупно");
+    b.innerHTML = art(it.c, i) +
+      '<span class="meta"><b>' + it.t + '</b><span>' + it.s + '</span></span>';
+    gal.appendChild(b);
+  });
+
+  var items = Array.prototype.slice.call(gal.children);
+
+  /* появление */
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(e){
+      e.forEach(function(en){
+        if(!en.isIntersecting) return;
+        en.target.classList.add("in");
+        io.unobserve(en.target);
+      });
+    },{threshold:.08});
+    items.forEach(function(el){ io.observe(el); });
+  }else{
+    items.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* фильтры */
+  var visible = items.slice();
+  document.querySelectorAll(".filters button").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var f = btn.dataset.f;
+      document.querySelectorAll(".filters button").forEach(function(b){
+        b.setAttribute("aria-pressed", String(b === btn));
+      });
+      visible = [];
+      items.forEach(function(el){
+        var show = (f === "all" || el.dataset.cat === f);
+        el.classList.toggle("hide", !show);
+        if(show){ el.classList.add("in"); visible.push(el); }
+      });
+      empty.classList.toggle("show", visible.length === 0);
+    });
+  });
+
+  /* просмотр */
+  var viewer = document.getElementById("viewer");
+  var frame = document.getElementById("v-frame");
+  var cap = document.getElementById("v-cap");
+  var pos = 0;
+
+  function render(){
+    var el = visible[pos];
+    if(!el) return;
+    var it = ITEMS[+el.dataset.idx];
+    frame.innerHTML = art(it.c, +el.dataset.idx);
+    cap.innerHTML = "<b>" + it.t + "</b>" + CATS[it.c] + " · " + it.s;
+  }
+  function open(el){
+    pos = visible.indexOf(el);
+    if(pos < 0) pos = 0;
+    render();
+    viewer.classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+  function close(){
+    viewer.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+  function step(d){
+    pos = (pos + d + visible.length) % visible.length;
+    render();
+  }
+
+  gal.addEventListener("click", function(e){
+    var el = e.target.closest(".item");
+    if(el) open(el);
+  });
+  document.getElementById("v-close").addEventListener("click", close);
+  document.getElementById("v-prev").addEventListener("click", function(){ step(-1); });
+  document.getElementById("v-next").addEventListener("click", function(){ step(1); });
+  viewer.addEventListener("click", function(e){ if(e.target === viewer) close(); });
+  document.addEventListener("keydown", function(e){
+    if(!viewer.classList.contains("show")) return;
+    if(e.key === "Escape") close();
+    if(e.key === "ArrowLeft") step(-1);
+    if(e.key === "ArrowRight") step(1);
+  });
+
+  /* свайп в просмотре */
+  var sx = null;
+  viewer.addEventListener("touchstart", function(e){ sx = e.touches[0].clientX; }, {passive:true});
+  viewer.addEventListener("touchend", function(e){
+    if(sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+    sx = null;
+  });
+
+  if("serviceWorker" in navigator && location.protocol !== "file:"){
+    window.addEventListener("load", function(){
+      navigator.serviceWorker.register("sw.js").catch(function(){});
+    });
+  }
+})();
+</script>
+</body>
+</html>

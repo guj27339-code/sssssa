@@ -1,0 +1,91 @@
+{
+  "slug": "pointdetail",
+  "name": "Point Detail",
+  "timezone": "Europe/Moscow",
+  "accent_color": "#4690FF",
+  "description": "Детейлинг-центр в Волгограде: полировка, химчистка, плёнка.",
+  "contacts": {
+    "phone": "+79297888879",
+    "whatsapp": null,
+    "telegram": "https://t.me/Point_Detail",
+    "address": "Волгоград, Коммунистическая улица, 25а",
+    "map_url": "https://yandex.ru/maps/org/point_detail/153045446213/"
+  },
+  "resources": [
+    {
+      "key": "box-1",
+      "name": "Пост 1"
+    }
+  ],
+  "services": [
+    {
+      "key": "polishing",
+      "name": "Полировка кузова",
+      "description": "Восстановительная полировка.",
+      "duration_minutes": 480,
+      "buffer_before_minutes": 30,
+      "buffer_after_minutes": 30,
+      "price_kopecks": null,
+      "resource_keys": [
+        "box-1"
+      ]
+    }
+  ],
+  "working_hours": [
+    {
+      "weekday": 1,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 2,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 3,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 4,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 5,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 6,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    },
+    {
+      "weekday": 7,
+      "opens_at": "09:00",
+      "closes_at": "20:00"
+    }
+  ],
+  "schedule_exceptions": [],
+  "info_cards": [
+    {
+      "title": "Карточка 1",
+      "body": "Короткий текст"
+    },
+    {
+      "title": "Карточка 2",
+      "body": "Короткий текст"
+    },
+    {
+      "title": "Карточка 3",
+      "body": "Короткий текст"
+    }
+  ],
+  "media": {
+    "hero": null,
+    "logo": null
+  },
+  "gallery": []
+}
